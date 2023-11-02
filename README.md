@@ -234,7 +234,63 @@ Exemplo:
 if __name__ == '__main__':
 num_utilizadores_areas = int(input())
 
-**Nessa questão, me baseei pelas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi e nos erros e duvidas, busquei ajuda na internet.**
+**Nessa questão, me baseei pelas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi . Troquei o nome FILA por ÁREA, acho que FILA confundi muito o usuário**
+
+```python
+# Função para calcular a média de uma lista de valores
+def calcular_media(valores):
+    return sum(valores) / len(valores) if valores else 0
+
+# Função para ler uma lista de valores separados por espaços
+def ler_lista_valores(mensagem):
+    valores = input(mensagem).split()
+    return [int(valor) for valor in valores]
+
+# Função para processar as entradas e calcular as médias
+def calcular_medias():
+    num_usuarios_por_area = int(input("Digite o número de utilizadores por área: "))
+    tempos_utilizador = {}
+    tempos_area = {}
+
+    for _ in range(num_usuarios_por_area):
+        usuario, area = input("Digite o utilizador e a área separados por um espaço: ").split()
+        tempos_utilizador[usuario] = []
+        tempos_area[area] = []
+
+    num_tickets_resolvidos = int(input("Digite o número de tickets resolvidos: "))
+
+    for _ in range(num_tickets_resolvidos):
+        usuario, duracao = input("Digite o utilizador e a duração separados por um espaço: ").split()
+        tempos_utilizador[usuario].append(int(duracao))
+        area = input("Digite a área: ")
+        tempos_area[area].append(int(duracao))
+
+    # Cálculo das médias e impressão
+    print("\nMédia de duração por utilizador:")
+    for usuario, tempos in tempos_utilizador.items():
+        media = calcular_media(tempos)
+        print(f"{usuario} {media:.1f}")
+
+    print("\nMédia de duração por área:")
+    for area, tempos in tempos_area.items():
+        media = calcular_media(tempos)
+        print(f"{area} {media:.1f}")
+
+    # Ordenar os resultados da maior para a menor duração média (por utilizador)
+    ordenado_por_duracao = sorted(tempos_utilizador.items(), key=lambda x: -calcular_media(x[1]))
+    print("\nResultado ordenado por duração média (maior para menor):")
+    for usuario, tempos in ordenado_por_duracao:
+        media = calcular_media(tempos)
+        print(f"{usuario} {media:.1f}")
+
+# Chamada da função principal
+calcular_medias()
+```
+
+### RESULTADO
+
+![Captura de tela 2023-11-02 154336](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/ce58c9b1-a0c4-4296-b8a8-d5d005ce0d29)
+
 
 
 ## Autora
