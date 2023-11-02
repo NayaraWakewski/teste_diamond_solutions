@@ -253,14 +253,18 @@ Ao finalizar no console aparecerá o resultado.
 
 
 ```python
-# Função para calcular a média de uma lista de valores
+# Função para calcular a média de uma lista de valores.
 def calcular_media(valores):
     return sum(valores) / len(valores) if valores else 0
+
+#Define uma função chamada calcular_media que calcula a média de uma lista de valores. A função retorna a soma dos valores dividida pelo número de valores, arredondada para uma casa decimal. Se a lista estiver vazia, retorna 0.
 
 # Função para ler uma lista de valores separados por espaços
 def ler_lista_valores(mensagem):
     valores = input(mensagem).split()
     return [int(valor) for valor in valores]
+
+#Define uma função chamada ler_lista_valores que recebe uma mensagem como entrada, lê uma linha da entrada padrão (o que o usuário digitar), divide essa linha em valores separados por espaços, converte cada valor para um número inteiro e retorna a lista de números.
 
 # Função para processar as entradas e calcular as médias
 def calcular_medias():
@@ -268,18 +272,28 @@ def calcular_medias():
     tempos_utilizador = {}
     tempos_area = {}
 
+#Solicita ao usuário o número de utilizadores por área.
+#Inicializa dois dicionários, tempos_utilizador e tempos_area, para armazenar informações sobre os tempos de resolução por utilizador e por área.
+
     for _ in range(num_usuarios_por_area):
         usuario, area = input("Digite o utilizador e a área separados por um espaço: ").split()
         tempos_utilizador[usuario] = []
         tempos_area[area] = []
 
+#Em um loop, solicita ao usuário que insira pares "utilizador e área", adicionando o utilizador à lista de utilizadores em tempos_utilizador e a área à lista de áreas em tempos_area.
+
     num_tickets_resolvidos = int(input("Digite o número de tickets resolvidos: "))
+
+#Solicita ao usuário o número de tickets resolvidos.
+
 
     for _ in range(num_tickets_resolvidos):
         usuario, duracao = input("Digite o utilizador e a duração separados por um espaço: ").split()
         tempos_utilizador[usuario].append(int(duracao))
         area = input("Digite a área: ")
         tempos_area[area].append(int(duracao))
+
+#Em outro loop, solicita ao usuário que insira pares "utilizador e duração" e adiciona a duração à lista de tempos do utilizador correspondente em tempos_utilizador. Também solicita ao usuário a área correspondente para adicionar a duração à lista de tempos da área correspondente em tempos_area.
 
     # Cálculo das médias e impressão
     print("\nMédia de duração por utilizador:")
@@ -292,7 +306,10 @@ def calcular_medias():
         media = calcular_media(tempos)
         print(f"{area} {media:.1f}")
 
+#Calcula a média de duração por utilizador e por área usando a função calcular_media e imprime os resultados.
+
     # Ordenar os resultados da maior para a menor duração média (por utilizador)
+
     ordenado_por_duracao = sorted(tempos_utilizador.items(), key=lambda x: -calcular_media(x[1]))
     print("\nResultado ordenado por duração média (maior para menor):")
     for usuario, tempos in ordenado_por_duracao:
@@ -301,6 +318,9 @@ def calcular_medias():
 
 # Chamada da função principal
 calcular_medias()
+
+#Chama a função principal calcular_medias para executar o processo completo.
+
 ```
 
 ### RESULTADO
