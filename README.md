@@ -299,7 +299,7 @@ for usuario, tempos in ordenado_por_duracao: (fazendo um loop)
 E assim irá fazer para os demais 7 chamados.
 Ao finalizar no console aparecerá o resultado.
 
-## CÓDIGO SEM USAR FUNÇÃO (NESSE PRECISEI USAR PESQUISA PARA LEMBRAR COMO FAZER FUNÇÃO).
+## CÓDIGO USANDO FUNÇÃO (NESSE PRECISEI USAR PESQUISA PARA LEMBRAR COMO FAZER FUNÇÃO).
 
 ```python
 # Função para calcular a média de uma lista de valores.
