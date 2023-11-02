@@ -210,8 +210,8 @@ O SELECT ficaria assim:
 
 ```sql
 SELECT c.nome AS nome_categoria, SUM(p.quantidade) AS quantidade_total_de_produtos
-FROM categorias c
-INNER JOIN produto p ON c.id = p.id_categoria
+FROM tabela_categorias c
+INNER JOIN tabela_produto p ON c.id_categoria = p.id_categoria
 GROUP BY c.nome
 ORDER BY quantidade_total_de_produtos DESC;
 ```
