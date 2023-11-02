@@ -234,7 +234,55 @@ Exemplo:
 if __name__ == '__main__':
 num_utilizadores_areas = int(input())
 
-**Nessa questão, me baseei pelas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi . Troquei o nome FILA por ÁREA, acho que FILA confundi muito o usuário**
+**Nessa questão, me baseei pelas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON e a lógica também SEM USAR função. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi . Troquei o nome FILA por ÁREA, acho que FILA confundi muito o usuário**
+
+
+## CÓDIGO SEM USAR FUNÇÃO.
+
+```python
+
+# Dicionários para armazenar os tempos de resolução por utilizador e por área
+tempos_utilizador = {}
+tempos_area = {}
+
+# Solicitar o número de utilizadores por área
+num_usuarios_por_area = int(input("Digite o número de utilizadores por área: "))
+
+# Preencher os dicionários com os tempos de resolução (fazendo um loop)
+for _ in range(num_usuarios_por_area):
+    usuario, area = input("Digite o utilizador e a área separados por um espaço: ").split()
+    tempos_utilizador.setdefault(usuario, [])
+    tempos_area.setdefault(area, [])
+
+# Solicitar o número de tickets resolvidos
+num_tickets_resolvidos = int(input("Digite o número de tickets resolvidos: "))
+
+# Preencher os dicionários com os tempos de resolução por utilizador e área (fazendo um loop)
+for _ in range(num_tickets_resolvidos):
+    usuario, duracao = input("Digite o utilizador e a duração separados por um espaço: ").split()
+    tempos_utilizador.setdefault(usuario, []).append(int(duracao))
+    area = input("Digite a área: ")
+    tempos_area.setdefault(area, []).append(int(duracao))
+
+# Cálculo das médias e impressão
+print("\nMédia de duração por utilizador:")
+for usuario, tempos in tempos_utilizador.items():
+    media = sum(tempos) / len(tempos) if tempos else 0
+    print(f"{usuario} {media:.1f}")
+
+print("\nMédia de duração por área:")
+for area, tempos in tempos_area.items():
+    media = sum(tempos) / len(tempos) if tempos else 0
+    print(f"{area} {media:.1f}")
+
+# Ordenar os resultados da maior para a menor duração média (por utilizador)
+ordenado_por_duracao = sorted(tempos_utilizador.items(), key=lambda x: -sum(x[1]) / len(x[1]) if x[1] else 0)
+print("\nResultado ordenado por duração média (maior para menor):")
+for usuario, tempos in ordenado_por_duracao: (fazendo um loop)
+    media = sum(tempos) / len(tempos) if tempos else 0
+    print(f"{usuario} {media:.1f}")
+
+```
 
 ## INPUT
 
@@ -251,6 +299,7 @@ num_utilizadores_areas = int(input())
 E assim irá fazer para os demais 7 chamados.
 Ao finalizar no console aparecerá o resultado.
 
+## CÓDIGO SEM USAR FUNÇÃO (NESSE PRECISEI USAR PESQUISA PARA LEMBRAR COMO FAZER FUNÇÃO).
 
 ```python
 # Função para calcular a média de uma lista de valores.
