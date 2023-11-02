@@ -289,7 +289,7 @@ calcular_medias()
 
 ### RESULTADO
 
-![Captura de tela 2023-11-02 154336](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/d056287b-d9a0-46b4-8513-808de16df031)
+![Captura de tela 2023-11-02 160325](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/6293175e-688d-4b96-acf4-a11b7d120e16)
 
 
 ## 🎁 Expressões de gratidão
