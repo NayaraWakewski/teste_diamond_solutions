@@ -12,6 +12,7 @@ Este repositório contém as soluções em SQL e Python, para o teste para a vag
 ## Passo a passo
 
 **SQL** - Foi Criado um banco de Dados no Postgres, para a criação das tabelas e resolução das questões.
+
 **PYTHON** - Foi utilizada a ferramenta VSCODE para resolução da questão 3.
 
 ## Resolução questões 1 e 2:
@@ -182,8 +183,6 @@ ORDER BY quantidade_total_de_produtos DESC;
 
 ### EXPLICAÇÃO
 
-Claro, vou explicar a consulta SQL passo a passo:
-
 **SELECT** c.nome AS nome_categoria, SUM(p.quantidade) AS quantidade_total_de_produtos`: Esta parte da consulta seleciona o nome da categoria da tabela "tabela_categorias" e calcula a soma da coluna "quantidade" da tabela "tabela_produto" para cada categoria. O resultado é nomeado como "nome_categoria" e "quantidade_total_de_produtos" para facilitar a leitura dos resultados.
 
 **FROM** categorias c`: Nesta parte, definimos um alias "c" para a tabela "tabela_categorias" para simplificar a referência a ela na consulta.
@@ -234,7 +233,7 @@ Exemplo:
 if __name__ == '__main__':
 num_utilizadores_areas = int(input())
 
-**Nessa questão, me baseei pelas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON e a lógica também SEM USAR função. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi . Troquei o nome FILA por ÁREA, acho que FILA confundi muito o usuário**
+**Nessa questão, fiz jma consulta nas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON e a lógica também SEM USAR função. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi . Troquei o nome FILA por ÁREA, acho que FILA confundi muito o usuário**
 
 
 ## CÓDIGO SEM USAR FUNÇÃO.
@@ -299,7 +298,7 @@ for usuario, tempos in ordenado_por_duracao: (fazendo um loop)
 E assim irá fazer para os demais 7 chamados.
 Ao finalizar no console aparecerá o resultado.
 
-## CÓDIGO USANDO FUNÇÃO (NESSE PRECISEI USAR PESQUISA PARA LEMBRAR COMO FAZER FUNÇÃO).
+## CÓDIGO USANDO FUNÇÃO (NESSE PRECISEI USAR PESQUISA PARA LEMBRAR COMO FAZER COM FUNÇÃO).
 
 ```python
 # Função para calcular a média de uma lista de valores.
