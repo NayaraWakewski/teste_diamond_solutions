@@ -216,6 +216,25 @@ GROUP BY c.nome
 ORDER BY quantidade_total_de_produtos DESC;
 ```
 
+## QUESTÃO 3
+
+Na avaliação da performance de resolução de tickets, pretende-se, de uma lista de filas e utilizadores, seguida da duração de resolução (em minutos) por utilizador, obter os
+seus tempos médios de resolução.
+Estrutura da entrada:
+>_ primeira linha com numero de utilizadores por fila
+>_ n linhas com par “utilizador fila” (tantos pares quanto o valor anterior)
+>_ numero de tickets resolvidos
+>_ n linhas com par “utilizador duracao” (tantos pares quanto o valor anterior)
+>
+A saída da aplicação deve ser feito para o console, usando a função print() onde se pode ler a duração média (em minutos) por utilizador, assim como por fila, arredondados
+para 1 casa decimal.
+Como extra, pretende-se obter o resultado ordenado da maior para a menor duração média (ignorando a ordem alfabética). O formato da saída deve ser nos pares “utilizador duração” e “àrea duração”.
+
+Exemplo:
+if __name__ == '__main__':
+num_utilizadores_areas = int(input())
+
+**Nessa questão, me baseei pelas aulas que tive na Infinity School em Programação com Python, a grade de lá não era exclusivamente PYTHON para Data Science, então vimos função em PYTHON. Utilizei de fontes de pesquisa para conseguir resolver a questão, com base no que aprendi e nos erros e duvidas, busquei ajuda na internet.**
 
 
 ## Autora
