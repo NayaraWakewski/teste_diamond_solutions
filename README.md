@@ -11,8 +11,8 @@ Este repositório contém as soluções em SQL e Python, para o teste para a vag
 
 ## Passo a passo
 
-***SQL*** - Foi Criado um banco de Dados no Postgres, para a criação das tabelas e resolução das questões.
-***PYTHON** - Foi utilizada a ferramenta VSCODE para resolução da questão 3.
+**SQL** - Foi Criado um banco de Dados no Postgres, para a criação das tabelas e resolução das questões.
+**PYTHON** - Foi utilizada a ferramenta VSCODE para resolução da questão 3.
 
 ## Resolução questões 1 e 2:
 
