@@ -1,67 +1,110 @@
 # Teste Diamond Solutions
 
-![texto alt](https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.linkedin.com%2Fin%2Fdiamond-solutions-499014247&psig=AOvVaw08Kq7FBUmKwKx7GMstC8dx&ust=1699033075143000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMjPmobupYIDFQAAAAAdAAAAABAE)
+![texto alt](https://media.licdn.com/dms/image/C4E16AQHHZj8VFWrtEQ/profile-displaybackgroundimage-shrink_350_1400/0/1659031081520?e=1704326400&v=beta&t=saVEXXEDZ04vhq0EYrbE5a8Xk27LUoNCbBR_KMxcxBU)
 
 
-Este repositório contém as soluções em SQL para o Desafio Sala de Aula - SQL Avançado. O desafio consiste em responder a uma série de questões utilizando consultas SQL avançadas em um banco de dados fictício de vendas.
+Este repositório contém as soluções em SQL e Python, para o teste para a vaga de Estágio da Empresa Diamond Solutions.
 
 ## Pré-requisitos
 
-- Banco de dados relacional e dimensional com suporte a consultas SQL.
+- SQL e Python.
 
 ## Passo a passo
 
-Siga os passos abaixo para obter as respostas para cada uma das questões do desafio.
-*Observação: As consultas SQL acima devem ser executadas em um ambiente adequado, como um cliente de banco de dados ou uma IDE SQL.*
+*SQL* - Foi Criado um banco de Dados no Postgres, para a criação das tabelas e resolução das questões.
+*PYTHON* - Foi utilizada a ferramenta VSCODE para resolução da questão 3.
 
-### Consultando as colunas das tabelas
+## Resolução questões 1 e 2:
 
 Execute as seguintes consultas para verificar a estrutura e as colunas das tabelas envolvidas nas questões:
 
-```sql
-SELECT * FROM dw.fato_vendas;
-SELECT * FROM dw.dim_vendedor;
-SELECT * FROM dw.dim_produto;
-SELECT * FROM dw.dim_cliente;
-SELECT * FROM dw.dim_dependente;
-SELECT * FROM dw.dim_canal;
-
-```
 
 ### Passo a passo na resolução das questões.
 
 ## QUESTÃO 1
 
-Apresente uma Query para listar o código e o nome do vendedor com maior número de vendas (contagem), e que estas vendas estejam com status concluída. As colunas presentes no resultado devem ser, portanto codigo vendedor e nome vendedor.
+Um aparelho faz gravações da quantidade de luz recebida em uma área por períodos de tempo. Também existe um indicador que é incrementado em cada mudança de temperatura. Para reduzir o tamanho da mensagem que é enviada, o aparelho compacta os registros próximos com o mesmo valor e acrescenta a quantidade de registros compactados. Construa uma consulta para solucionar a compressao e mostrar a quantidade de luz e agrupamento de registros.
+
+1- CRIAÇÃO DO BANCO DE DADOS
 
 Execute a seguinte consulta para obter o resultado:
 
 ```sql
-SELECT fv.codigovendedor , dv.nomevendedor
-    FROM dw.fato_vendas fv
-    JOIN dw.dim_vendedor dv ON fv.codigovendedor = dv.codigovendedor
-    WHERE fv.statusvenda = '1'
-GROUP BY fv.codigovendedor , dv.nomevendedor
-ORDER BY COUNT (*) DESC
-LIMIT 1; ----limita o resultado a apenas 1 vendedor-----
+CREATE DATABASE database_teste_estagio;
 
 ```
 
-O comando **SELECT** indica quais colunas queremos selecionar na consulta. Nesse caso, estamos selecionando as colunas "codigovendedor" 
-da tabela de vendas e "nomevendedor" da tabela de vendedores.
+2 - CRIAÇÃO DAS TABELAS
 
-A cláusula **FROM** especifica a tabela principal da consulta, que é "fato_vendas" neste caso.
+Execute a seguinte consulta para obter o resultado:
 
-A cláusula **JOIN** é usada para combinar os dados das duas tabelas com base em uma condição. 
-Estamos combinando as tabelas "fato_vendas" e "dim_vendedor" usando a coluna "codigovendedor" como critério de correspondência.
+### TABELA REGISTROS
 
-A cláusula **WHERE** é usada para filtrar os resultados com base em uma condição. Neste caso, estamos filtrando apenas as vendas que têm um "statusvenda" igual a '1'.
+```sql
+CREATE TABLE tabela_registros (
+  id integer PRIMARY KEY,
+  quantidade_luz integer,
+  mark integer
+);
 
-A cláusula **GROUP BY** é usada para agrupar os resultados com base em uma ou mais colunas. Estamos agrupando os resultados pelo "codigovendedor" e "nomevendedor".
+```
 
-A cláusula **ORDER BY** é usada para classificar os resultados em ordem ascendente ou descendente. Estamos classificando os resultados com base na contagem (*) em ordem decrescente.
+3- INSERINDO DADOS
 
-A cláusula **LIMIT** é usada para limitar o número de resultados retornados pela consulta. Neste caso, estamos limitando a consulta para retornar apenas o vendedor com a contagem mais alta (o primeiro resultado).
+Execute a seguinte consulta para obter o resultado:
+
+### TABELA REGISTROS
+
+```sql
+INSERT INTO tabela_registros (id, quantidade_luz, mark) VALUES
+(1, 45, 1),
+(2, 45, 1),
+(3, 45, 1),
+(4, 64, 2),
+(5, 64, 2),
+(6, 64, 2),
+(7, 64, 2),
+(8, 60, 3),
+(9, 60, 3),
+(10, 60, 3),
+(11, 62, 4),
+(12, 62, 4),
+(13, 66, 5),
+(14, 66, 5),
+(15, 66, 5);
+
+```
+
+4 - EFETUANDO O SELECT SOLICITADO
+
+```sql
+SELECT
+  quantidade_luz,
+  COUNT(*) AS agrupamento_mark
+FROM tabela_registros
+GROUP BY quantidade_luz
+ORDER BY quantidade_luz;
+
+```
+
+### EXPLICAÇÃO
+
+**SELECT** quantidade_luz, COUNT(*) AS agrupamento: Esta parte da consulta define as colunas selecionada no resultado. Aqui, estamos selecionando duas colunas. A primeira coluna é quantidade_luz, que é a quantidade de luz que queremos agrupar. A segunda coluna é COUNT(*), que é uma função de agregação que conta o número de registros em cada grupo e renomeamos o resultado para agrupamento_mark.
+
+**FROM** tabela_registros: Aqui, especificamos a tabela de onde os dados serão consultados.
+
+**GROUP BY** quantidade_luz: Esta cláusula agrupa os registros com base nos valores da coluna quantidade_luz. Isso significa que todos os registros com o mesmo valor de quantidade_luz serão agrupados juntos.
+
+**ORDER BY** quantidade_luz: Esta cláusula ordena o resultado com base na coluna quantidade_luz em ordem crescente. Isso significa que os resultados serão exibidos em ordem crescente de valores de quantidade_luz.
+
+Portanto, a consulta conta quantos registros existem para cada valor único de quantidade_luz na tabela tabela_registros e retorna os resultados em ordem crescente com a quantidade de luz e a contagem de registros agrupados.
+
+### RESULTADO
+
+
+
+
+
 
 
 ## QUESTÃO 2
