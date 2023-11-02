@@ -239,13 +239,16 @@ num_utilizadores_areas = int(input())
 ## INPUT
 
 1 - Irá preencher com a quantidade de utilizadores, que são os atendentes, usuários... No exemplo do teste incluimos 3.
+
 2 - Irá preencher com o nome do utilizador e área (fila), no exemplo: ADALBERTO SSI e assim com todos da lista.
+
 3 - Irá preencher com a quantidade de chamados atendidos, no exemplo são 8 no total.
+
 4 - Irá prencher com o nome do Utilizador seguido do tempo, no exemplo: ADALBERTO 15.
+
 5- Irá preencher com a área daquele Utilizador que você respondeu na pergunta anterior, no caso do Adalberto é SSI.
 
 E assim irá fazer para os demais 7 chamados.
-
 Ao finalizar no console aparecerá o resultado.
 
 
