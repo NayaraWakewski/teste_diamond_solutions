@@ -101,7 +101,7 @@ Portanto, a consulta conta quantos registros existem para cada valor único de q
 
 ### RESULTADO
 
-![resultado 1](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/20788629-e436-41a5-bc53-9aaff6a7a6e6)
+![resultado 1](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/549905f3-a31e-4e01-8cb1-a983d3be8660)
 
 
 
