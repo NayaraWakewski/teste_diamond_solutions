@@ -293,6 +293,10 @@ calcular_medias()
 
 
 
-## Autora
+## 🎁 Expressões de gratidão
 
-### Nayara Valevskii
+* Obrigada pela oportunidade de participar do processo seletivo 📢;
+
+---
+⌨️ com ❤️ por [Nayara Vakevskii](https://github.com/NayaraWakewski) 😊
+
