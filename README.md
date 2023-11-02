@@ -200,7 +200,7 @@ Dessa forma, a consulta retorna o nome da categoria e a quantidade total de prod
 
 ### RESULTADO
 
-![resultado 1](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/20788629-e436-41a5-bc53-9aaff6a7a6e6)
+![resultado 2](https://github.com/NayaraWakewski/teste_diamond_solutions/assets/79403619/f39354a3-0ae9-44f5-8d92-2c683401c81c)
 
 ### OBSERVAÇÃO
 
